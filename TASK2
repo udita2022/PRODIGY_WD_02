@@ -1,0 +1,80 @@
+<html>
+<head>
+  
+  <title>Interactive Navigation Menu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+nav#main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* Ensure menu stays on top */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  display: block;
+}
+
+nav a:hover {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+/* Add a subtle background color change on scroll */
+.scrolled nav {
+  background-color: #fff;
+}
+</style>
+<body>
+
+  <nav id="main-nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <p>This is the main content of the page. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>This is some more content to make the page longer and demonstrate the fixed navigation bar.</p>
+  </main>
+
+  <script src="script.js"></script>
+  window.addEventListener('scroll', function() {
+  const navbar = document.getElementById('main-nav');
+  if (window.scrollY > 0) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+</body>
+</html>
